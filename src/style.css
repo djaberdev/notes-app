@@ -1,0 +1,656 @@
+/* Import Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', serif;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+body {
+    background-color: #f0f4f6;
+}
+
+/* Start Reuseable Classes */
+
+.flex-center-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-all-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+/* End Reuseable Classes */
+
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    position: relative;
+    height: 80px;
+    padding: 0 1rem;
+    background-color: #f5f5f5;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+nav .left {
+    gap: 8px;
+}
+
+nav .left img {
+    width: 40px;
+    border-radius: 50%;
+    outline: 2px solid transparent;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+nav .left img:hover {
+    outline-color: hsl(0deg 0.91% 80%);
+}
+
+nav .left h3 {
+    font-size: 15px;
+    font-weight: 600;
+    padding: 2px 8px;
+    text-align: center;
+    background-color: #e6e6e6;
+    border-radius: 4px;
+}
+
+nav .right,
+.note-card .details .buttons {
+    gap: 6px;
+}
+
+button {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: 0.3s ease;
+}
+
+button:not(#delete-btn, #expand-btn):hover {
+    background-color: #ddd;
+}
+
+button:active {
+    scale: 0.92;
+}
+
+button i {
+    font-size: 20px;
+    color: #333;
+}
+
+nav .filters,
+nav .profile-area {
+    position: absolute;
+    top: calc(100% + 20px);
+    width: 80%;
+    max-width: 40%;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    transition: 0.6s ease;
+    opacity: 0;
+    transform: translateY(15px) rotateX(15deg);
+    visibility: hidden;
+    z-index: 9;
+}
+
+nav .filters {
+    right: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 12px;
+    padding: 8px 12px;
+}
+
+nav .filters.show,
+nav .profile-area.show {
+    transform: translateY(0px) rotateX(0deg);
+    opacity: 1;
+    visibility: visible;
+}
+
+nav .filters .filter-btn {
+    padding: 8px 12px;
+    background-color: #eee;
+    border-radius: 4px;
+    text-align: center;
+    outline: 1.6px solid transparent;
+    font-size: 14px;
+    text-transform: capitalize;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+nav .filters .filter-btn.active,
+nav .filters .filter-btn:hover {
+    background-color:#3b42a6;
+    color: white;
+}
+
+nav .profile-area {
+    left: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+}
+
+nav .profile-area .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+nav .profile-area .pictures {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 15px;
+}
+
+nav .profile-area .pictures .avatar-box label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 10px 20px;
+    background-color: #eee;
+    border-radius: 4px;
+    outline: 2px solid transparent;
+    transition: 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+nav .profile-area .pictures .avatar-box label:hover {
+    background-color: hsl(0, 0%, 85%);
+}
+
+nav .profile-area .pictures .avatar-box label::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 8px;
+    background-color: transparent;
+    transition: 0.3s ease;
+}
+
+nav .profile-area .pictures .avatar-box input[type="radio"]:checked + label {
+    outline-color: #3b42a6;
+}
+nav .profile-area .pictures .avatar-box input[type="radio"]:checked + label::after {
+    background-color: #3b42a6;
+}
+
+nav .profile-area .pictures .avatar-box label img {
+    max-width: 100%;
+    max-height: 80px;
+    border-radius: 3px;
+    object-fit: cover;
+}
+
+.notes-area {
+    position: relative;
+    padding: 30px;
+    min-height: 100vh;
+}
+
+.notes-area .error-box {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.notes-area .error-box img {
+    width: 300px;
+}
+
+.notes-area .error-box h2 {
+    font-size: 20px;
+    margin-top: 8px;
+    color: #333;
+}
+
+.notes-area .notes-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.notes-area .notes-container .note-card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+}
+
+.notes-area .notes-container .note-card .text {
+    padding: 15px 20px;
+    max-height: 300px;
+    overflow: hidden;
+}
+
+.notes-area .notes-container .note-card .text h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.notes-area .notes-container .note-card .text p {
+    position: relative;
+    height: 4.8rem;
+    overflow: hidden;
+    font-size: 15px;
+    font-weight: 400;
+    color: #444;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+.notes-area .notes-container .note-card .text p::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.8rem;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, white 100%);
+}
+
+.notes-area .notes-container .note-card .details {
+    position: relative;
+    padding: 15px 20px;
+    border-top: 2px solid #d5d5d5;
+}
+
+.notes-area .notes-container .note-card .details span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #999;
+}
+
+.note-card .details #delete-btn.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.note-card .details #delete-btn:hover,
+.note-card .details #delete-btn.disabled { 
+    background-color: #db3c30;
+}
+
+.note-card .details #expand-btn:hover {
+    background-color: #3b42a6;
+}
+
+.note-card .details #delete-btn i,
+.note-card .details #expand-btn i {
+    transition: 0.3s ease;
+}
+
+.note-card .details #delete-btn:hover i,
+.note-card .details #expand-btn:hover i,
+.note-card .details #delete-btn.disabled i {
+    color: #eee;
+}
+
+.light-box,
+.expand-screen {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    transition: 0.4s ease;
+    opacity: 0;
+    scale: 0.95;
+    visibility: hidden;
+    z-index: 10;
+}
+
+.light-box {
+    position: absolute;
+    min-height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.expand-screen {
+    position: fixed;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.light-box.show,
+.expand-screen.show {
+    opacity: 1;
+    scale: 1;
+    visibility: visible;
+}
+
+.light-box form {
+    width: 90%;
+    max-width: 600px;
+    margin: 50px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+.light-box form .head {
+    padding: 14px 20px;
+    border-bottom: 2px solid #d5d5d5;
+}
+
+.light-box form .head h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.close-btn {
+    font-size: 18px;
+    color: #666;
+    width: 26px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+.light-box form .categories {
+    width: 100%;
+}
+
+.light-box form .categories .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.light-box form .categories .container .category-box input[type="radio"],
+nav .profile-area .pictures .avatar-box input[type="radio"] {
+
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+}
+
+.light-box form .categories .container .category-box input[type="radio"]:checked + label {
+    outline-color: #3b42a6;
+}
+
+.light-box form .categories .container .category-box label {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #eee;
+    border-radius: 4px;
+    outline: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.light-box form .categories .container .category-box label:hover {
+    background-color: hsl(0, 0%, 85%);
+}
+
+.light-box form .categories .container .category-box label i {
+    font-size: 26px;
+    color: #555;
+    transition: 0.2s ease;
+}
+
+.light-box form .categories .container .category-box input[type="radio"]:checked + label i {
+    color: #3b42a6;
+}
+
+
+.light-box form .categories .container .category-box label span {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 4px;
+    color: #212121;
+    text-transform: capitalize;
+}
+
+.light-box form .inputs {
+    width: 100%;
+    padding: 12px 20px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.light-box form .inputs .input-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.light-box form .input-box label,
+.light-box form .categories > label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.light-box form .inputs .input-box input,
+.light-box form .inputs .input-box textarea,
+nav .profile-area input[type="text"] {
+    padding: 6px 12px;
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    border-radius: 4px;
+    border: none;
+    outline: 2px solid #d5d5d5;
+    transition: 0.2s ease;
+}
+
+.light-box form .inputs .input-box input:focus,
+.light-box form .inputs .input-box textarea:focus,
+nav .profile-area input[type="text"]:focus {
+    outline-color: #333333be;
+}
+
+.light-box form .inputs input[type="submit"],
+nav .profile-area button[type="submit"] {
+    width: 100%;
+    padding: 10px 12px;
+    color: white;
+    font-size: 14.5px;
+    font-weight: 400;
+    border: none;
+    border-radius: 4px;
+    background-color: #3b42a6;
+    transition: 0.3s ease;
+    cursor: pointer;
+    margin-top: 6px;
+}
+
+.light-box form .inputs input[type="submit"]:hover,
+nav .profile-area button[type="submit"] {
+    background-color: hsl(236, 48%, 38%);
+}
+
+.expand-screen .expanded-note {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 600px;
+    height: 90vh;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+}
+
+.expand-screen .expanded-note .title-area {
+    gap: 10px;
+    padding: 10px 20px 10px 10px;
+    border-bottom: 2px solid #a3a3a3;
+}
+
+.expand-screen .expanded-note .title-area div {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.expand-screen .expanded-note .title-area div i {
+    font-size: 25px;
+    color: #555;
+}
+
+.expand-screen .expanded-note .title-area div h2 {
+    font-size: 20px;
+    color: #444;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.expand-screen .expanded-note .content-area {
+    padding: 20px;
+    flex: 1;
+}
+
+.expand-screen .expanded-note .content-area .content-info,
+.expand-screen .expanded-note .details-area .fulldate,
+.expand-screen .expanded-note .details-area .id,
+.expand-screen .expanded-note .details-area .category {
+    display: block;
+    width: fit-content;
+    padding: 6px 18px;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #f5f5f5;
+}
+
+.expand-screen .expanded-note .content-area .content-info {
+    background-color: #444;
+}
+
+.expand-screen .expanded-note .content-area p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #444;
+    line-height: 1.7;
+    word-break: break-word;
+    max-height: 380px;
+    overflow: auto;
+}
+
+.expand-screen .expanded-note .details-area {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 20px;
+    border-top: 2px solid #a3a3a3;
+}
+
+.expand-screen .expanded-note .details-area .fulldate {
+    background-color: #777;
+}
+
+.expand-screen .expanded-note .details-area .id,
+.expand-screen .expanded-note .details-area .category {
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.expand-screen .expanded-note .details-area .id {
+    background-color: #3b42a6;
+}
+
+.expand-screen .expanded-note .details-area .category {
+    background-color: hsl(236, 48%, 55%);
+}  
+
+.expand-screen .expanded-note .details-area .id i,
+.expand-screen .expanded-note .details-area .category i {
+    font-size: 18px;
+}
+
+.expand-screen .expanded-note .details-area .category span {
+    text-transform: capitalize;
+}
+
+/* Responsive Codes */
+@media (min-width: 1114px) {
+    .light-box {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .notes-area {
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 575px) {
+    .notes-area .error-box img {
+        width: 200px;
+    }
+
+    .notes-area .error-box h2 {
+        font-size: 18px;
+    }
+}
