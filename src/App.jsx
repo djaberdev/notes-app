@@ -76,13 +76,13 @@ function App() {
     // A Function To Initialize The 'notesArray' State
     function notesInitializer() {
         let storedNotes = window.localStorage.getItem("notes");
-        return storedNotes ? JSON.parse(storedNotes) : [] ;
+        return storedNotes ? JSON.parse(storedNotes) : [];
     }
 
     // A Function To Initialize The 'userData' State
     function userInitializer() {
         let storedData = window.localStorage.getItem("user-data");
-        return storedData ? JSON.parse(storedData) : console.warn("Can't find any data about you!");
+        return storedData ? JSON.parse(storedData) : { avatar: defaultProfile, username: "Unknown" };
     }
 
     // States
@@ -200,9 +200,6 @@ function App() {
             })
             filteredNotes.forEach(filteredNote => filteredNote.style.display = "flex");
 
-            // Check If There Is No Tasks To Filter With The 'chosenfilter'
-            if (filteredNotes.length === 0) alert(`There Is No Tasks To Filter With The "${chosenfilter}" Filter`);
-            
         } else alert("There is no notes to filter!");
 
     };
@@ -212,7 +209,7 @@ function App() {
         window.localStorage.setItem("notes", JSON.stringify(notesArray));
     }, [notesArray]);
 
-    // Save Data To Local Storage Whenever The 'avatarState' or The 'usernameState' Change
+    // Save User Data To Local Storage Whenever The 'avatarState' or The 'usernameState' Change
     useEffect(() => {
         
         let userData = {
@@ -224,13 +221,11 @@ function App() {
 
         window.localStorage.setItem("user-data", JSON.stringify(userData));
 
-    }, [avatarState, usernameState]);
+        // Display The 'userData'
+        avatarRef.current.setAttribute("src", avatarState);
+        usernameRef.current.textContent = usernameState;
 
-    // Display The 'userData'
-    useEffect(() => {
-        avatarRef.current.setAttribute("src", userData.avatar || defaultProfile);
-        usernameRef.current.textContent = userData.username || "Unknown";
-    }, [userData]);
+    }, [avatarState, usernameState]);
 
     return (
 
@@ -266,7 +261,11 @@ function App() {
 
                     <button
                         title="Clear All"
-                        onClick={() => setNotesArray([])}
+                        onClick={() => {
+                            setNotesArray([]);
+                            setAvatarState(defaultProfile);
+                            setUsername("Unknown");
+                        }}
                     >
                         <i className="ri-restart-line"></i>
                     </button>
@@ -323,7 +322,6 @@ function App() {
                             )
                         }
                     </div>
-                    {/* <button type="submit">Save</button> */}
                 </div>
             </nav>
 

@@ -1,6 +1,10 @@
 /* Import Poppins Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+    --primary-color: #3b42a6;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -153,7 +157,7 @@ nav .filters .filter-btn {
 
 nav .filters .filter-btn.active,
 nav .filters .filter-btn:hover {
-    background-color:#3b42a6;
+    background-color:var(--primary-color);
     color: white;
 }
 
@@ -210,10 +214,10 @@ nav .profile-area .pictures .avatar-box label::after {
 }
 
 nav .profile-area .pictures .avatar-box input[type="radio"]:checked + label {
-    outline-color: #3b42a6;
+    outline-color: var(--primary-color);
 }
 nav .profile-area .pictures .avatar-box input[type="radio"]:checked + label::after {
-    background-color: #3b42a6;
+    background-color: var(--primary-color);
 }
 
 nav .profile-area .pictures .avatar-box label img {
@@ -323,7 +327,7 @@ nav .profile-area .pictures .avatar-box label img {
 }
 
 .note-card .details #expand-btn:hover {
-    background-color: #3b42a6;
+    background-color: var(--primary-color);
 }
 
 .note-card .details #delete-btn i,
@@ -427,7 +431,7 @@ nav .profile-area .pictures .avatar-box input[type="radio"] {
 }
 
 .light-box form .categories .container .category-box input[type="radio"]:checked + label {
-    outline-color: #3b42a6;
+    outline-color: var(--primary-color);
 }
 
 .light-box form .categories .container .category-box label {
@@ -454,7 +458,7 @@ nav .profile-area .pictures .avatar-box input[type="radio"] {
 }
 
 .light-box form .categories .container .category-box input[type="radio"]:checked + label i {
-    color: #3b42a6;
+    color: var(--primary-color);
 }
 
 
@@ -516,7 +520,7 @@ nav .profile-area button[type="submit"] {
     font-weight: 400;
     border: none;
     border-radius: 4px;
-    background-color: #3b42a6;
+    background-color: var(--primary-color);
     transition: 0.3s ease;
     cursor: pointer;
     margin-top: 6px;
@@ -531,7 +535,7 @@ nav .profile-area button[type="submit"] {
     display: flex;
     flex-direction: column;
     width: 80%;
-    max-width: 600px;
+    max-width: 800px;
     height: 90vh;
     background-color: white;
     border-radius: 8px;
@@ -616,7 +620,7 @@ nav .profile-area button[type="submit"] {
 }
 
 .expand-screen .expanded-note .details-area .id {
-    background-color: #3b42a6;
+    background-color: var(--primary-color);
 }
 
 .expand-screen .expanded-note .details-area .category {
