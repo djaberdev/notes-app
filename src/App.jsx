@@ -234,7 +234,7 @@ function App() {
                 <div className="left flex-align-center">
                     <img 
                         ref={avatarRef}
-                        alt="Default profile"
+                        alt="profile pic"
                         onClick={() => userAreaRef.current.classList.toggle("show")}
                     />
                     <h3 ref={usernameRef}></h3>
@@ -248,7 +248,7 @@ function App() {
                     </button>
         
                     <button
-                        title="Filer Notes"
+                        title="Filter Notes"
                         onClick={() => {
                             filtersRef.current.classList.toggle("show");
                             
