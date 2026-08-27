@@ -21,7 +21,8 @@
 
 <!-- Project Type -->
 <p align="center">
-  <img src="https://img.shields.io/badge/Type-Web%20Application-1a2865?style=for-the-badge" alt="Project Type" />
+  <img src="https://img.shields.io/badge/Type-Web%20Application-3a4096?style=for-the-badge" alt="Project Type" /> 
+  <img src="https://img.shields.io/badge/First_React.JS_Project-467f90?style=for-the-badge" alt="Additional Information" /> 
 </p>
 
 <!-- Project Overview & Desc.. -->
