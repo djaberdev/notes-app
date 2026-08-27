@@ -34,15 +34,17 @@
 
 ◈ **`Clean Design & UX-Friendly`** → Not like the majority of frontend web-apps, This App is Realy Beuatiful thanks to **Co-ordinated colours, Cool Hover Effects, Smooth Transitions, efficient Layout,...**
 
-◈ **`Complex Note Management`** → Instead of just a { Title & Description }, This App cares about Real Details like: **Category, Time, ID,...** 
+◈ **`Complex Note Management`** → Instead of just a { Title & Content }, This App cares about Real Details like: **Category, Time, ID,...** 
 
-◈ **`LocalStorage Save Data`** → Stay relaxed! &nbsp; when you use the app and build your Notes, Your Data will be saved Automatically using `LocalStorage`
+◈ **`LocalStorage Save Data`** → Stay relaxed! &nbsp; when you use the app and build your Notes, Your Data will be saved Automatically
 
-◈ **`Full Time Support`** → Each Note has the exsact full time of it's creation, which improve the experience and help the user to remember.
+◈ **`Full Time Support`** → Each **Note has the exact full time of it's creation,** which improves the `UX` and help the user to remember.
 
 ◈ **`Advanced Filters`** → You can Decide what to show on screen, thanks to the powerful `Filter Pannel` depends on Note's Category.
 
-◈ **`Choose The Display Method`** → The user has the ability to Leave the notes as **Blocks** or he can `Expand` each one for more informations.
+◈ **`Choose The Display Mod`** → The user can Leave the notes as **Blocks**, or he can use the `Expand Functionality` to show more informations.
+
+◈ **`Minimal Profile Pannel`** → No Backend! &nbsp; I use `LocalStorage` To build It. The user can **Enter his `userName` and Choose a good `Avatar`.**   
 
 <br />
 
