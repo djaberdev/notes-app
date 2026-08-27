@@ -15,7 +15,7 @@
 </p>
 
 <!-- Project Name -->
-<h3 align="center">Notes Taking — App</h3>
+<h3 align="center">Advanced Notes Taking — App</h3>
 <br />
 
 <!-- Project Type -->
@@ -25,14 +25,24 @@
 </p>
 
 <!-- Project Overview & Desc.. -->
-## 📝&nbsp; About **...**
-⇨ ...
+## 📝&nbsp; About **Notes App**
+⇨ Advanced Notes `Web Application` designed to organize and manage personal notes through a **clean, responsive and interactive interface,** with a strong focus on **UI/UX**, **data saving**, and **complex note management**.
 
-◈ `Feature` → ...
+◈ **`Fully Responsive`** → Ensures flawless Responsiveness across all devices and screen sizes.
 
-◈ `Feature` → ...
+◈ **`Optimized Performance`** → Built for fast loading and an optimized experience.
 
-◈ `Feature` → ...
+◈ **`Clean Design & UX-Friendly`** → Not like the majority of frontend web-apps, This App is Realy Beuatiful thanks to **Co-ordinated colours, Cool Hover Effects, Smooth Transitions, efficient Layout,...**
+
+◈ **`Complex Note Management`** → Instead of just a { Title & Description }, This App cares about Real Details like: **Category, Time, ID,...** 
+
+◈ **`LocalStorage Save Data`** → Stay relaxed! &nbsp; when you use the app and build your Notes, Your Data will be saved Automatically using `LocalStorage`
+
+◈ **`Full Time Support`** → Each Note has the exsact full time of it's creation, which improve the experience and help the user to remember.
+
+◈ **`Advanced Filters`** → You can Decide what to show on screen, thanks to the powerful `Filter Pannel` depends on Note's Category.
+
+◈ **`Choose The Display Method`** → The user has the ability to Leave the notes as **Blocks** or he can `Expand` each one for more informations.
 
 <br />
 
