@@ -36,7 +36,7 @@
 
 ◈ **`Complex Note Management`** → Instead of just a { Title & Content }, This App cares about Real Details like: **Category, Time, ID,...** 
 
-◈ **`LocalStorage Save Data`** → Stay relaxed! &nbsp; when you use the app and build your Notes, Your Data will be saved Automatically
+◈ **`LocalStorage Save Data`** → Stay relaxed! &nbsp; when you use the app and build your Notes, Your Data will be saved Automatically.
 
 ◈ **`Full Time Support`** → Each **Note has the exact full time of it's creation,** which improves the `UX` and help the user to remember.
 
@@ -44,61 +44,20 @@
 
 ◈ **`Choose The Display Mod`** → The user can Leave the notes as **Blocks**, or he can use the `Expand Functionality` to show more informations.
 
-◈ **`Minimal Profile Pannel`** → No Backend! &nbsp; I use `LocalStorage` To build It. The user can **Enter his `userName` and Choose a good `Avatar`.**   
+◈ **`Minimal Profile Pannel`** → No Backend! &nbsp; I use `LocalStorage` To build It. The user can **Enter his `userName` and Choose a good `Avatar`**   
 
 <br />
 
 <!-- Real Showcase-->
 ## 🎬&nbsp; Demo & Showcase
 
-<details>
-  <summary><strong>Desktop</strong></summary>
-
-  <br />
-
-  <img
-    src="./showcase/desktop.png"
-    width="100%"
-    alt="3D Shirt Customizer Desktop Preview"
-  />
-
-</details>
-
-<details>
-  <summary><strong>Tablet</strong></summary>
-
-  <br />
-
-  <img
-    src="./showcase/tablet.png"
-    width="80%"
-    alt="3D Shirt Tablet Customizer Preview"
-  />
-
-</details>
-
-<details>
-  <summary><strong>Mobile</strong></summary>
-
-  <br />
-
-  <img
-    src="./showcase/mobile.png"
-    width="40%"
-    alt="3D Shirt Customizer Mobile Preview"
-  />
-
-</details>
-
 <br />
 
 <!-- What Learn from that Project -->
 ## 🧠&nbsp; What I Learned 
 
-① `Thing` → ...
+① `Master React + LocalStorage` → Let me provide the `Data Saving` Feature in a seamless and proffesional Way.
 
-② `Thing` → ...
+② `No-Backend User Profile` → I challenge myself to build a minimal yet enjoyable one using entirely `LocalStorage`
 
-③ `Thing` → ...
-
-④ `Thing` → ...
+③ `Master 404 Page` → Let me enhance the `UX` with a Clear, Comprehensible and Beautiful Interface.
