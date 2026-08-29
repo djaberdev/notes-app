@@ -32,7 +32,7 @@
 
 ◈ **`Optimized Performance`** → Built for fast loading and an optimized experience.
 
-◈ **`Clean Design & UX-Friendly`** → Not like the majority of frontend web-apps, This App is Realy Beuatiful thanks to **Co-ordinated colours, Cool Hover Effects, Smooth Transitions, efficient Layout,...**
+◈ **`Clean Design & UX-Friendly`** → Not like the majority of frontend web-apps, This App is Realy Beuatiful thanks to **Co-ordinated Colors, Cool Hover Effects, Smooth Transitions, efficient Layout,...**
 
 ◈ **`Complex Note Management`** → Instead of just a { Title & Content }, This App cares about Real Details like: **Category, Time, ID,...** 
 
